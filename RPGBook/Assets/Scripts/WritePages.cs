@@ -15,12 +15,22 @@ public class WritePages : MonoBehaviour {
         List<Page> listOfAllPages = new List<Page>();
         //All the pages in the game is written in this function
 
-        //Page 0 
-        listOfAllPages.Add(createPage("a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns\n\n\nt\nu", null));
 
-        //Page 1
-        listOfAllPages.Add(createPage("This is the second page.\nYou're on your way!", null));
-        listOfAllPages[0].buttonChoices.Add(new AdventureButton(listOfAllPages[1], "Go to the next page!"));
+        //Page 0. First page. 
+        listOfAllPages.Add(createPage("Welcome!"+ System.Environment.NewLine + @"I hope you have prepared for this journey you're about to take.
+ These lands are wide, and the roads are long. Dangers are easy to find, and perhaps inevitable.
+ What will it take for the adventurous mind to be satisfied? Which skill set will bring the wanderer through the journey?", "skull"));
+
+
+        //Page 1. First choice to page 0.
+        listOfAllPages.Add(createPage(@"This is the second page. You're on your way!", "skull"));
+        listOfAllPages[0].buttonChoices.Add(new AdventureButton(listOfAllPages[1], "This is your first choice!"));
+        listOfAllPages[1].buttonChoices.Add(new AdventureButton(listOfAllPages[0], "Go back to the menu!"));
+
+
+        //Page 2. Second choice to page 0.
+        listOfAllPages.Add(createPage(@"This is the third page. You're on your way!", null));
+        listOfAllPages[0].buttonChoices.Add(new AdventureButton(listOfAllPages[2], "This is your second choice!"));
 
         return listOfAllPages;
 
