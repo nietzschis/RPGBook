@@ -23,13 +23,13 @@ public class WritePages : MonoBehaviour {
 
 
         //Page 1. First choice to page 0.
-        listOfAllPages.Add(createPage(@"This is the second page. You're on your way!", "skull"));
+        listOfAllPages.Add(createPage(@"This is the second page. You're on your way!", "bag2"));
         listOfAllPages[0].buttonChoices.Add(new AdventureButton(listOfAllPages[1], "This is your first choice!"));
         listOfAllPages[1].buttonChoices.Add(new AdventureButton(listOfAllPages[0], "Go back to the menu!"));
 
 
         //Page 2. Second choice to page 0.
-        listOfAllPages.Add(createPage(@"This is the third page. You're on your way!", null));
+        listOfAllPages.Add(createPage(@"This is the third page. You're on your way!", "helmet"));
         listOfAllPages[0].buttonChoices.Add(new AdventureButton(listOfAllPages[2], "This is your second choice!"));
 
         return listOfAllPages;

@@ -57,9 +57,10 @@ public class pageDisplayer : MonoBehaviour {
     {
         //pageText.text = page.pageText;
         Text txt = Instantiate(pageText) as Text;
-        txt.text = page.pageText;
+        txt.text = page.pageText + System.Environment.NewLine;
         txt.transform.SetParent(panel);
         txt.transform.localScale = new Vector3(1, 1, 1);
+
 
         //Uncomment this is you want text appearing in real time.
         //StartCoroutine(textAppearing(page.pageText,txt));
@@ -73,6 +74,7 @@ public class pageDisplayer : MonoBehaviour {
             newImage.transform.SetParent(panel);
             newImage.transform.localScale = new Vector3(1, 1, 1);
             newImage.sprite = Resources.Load<Sprite>(nameSpace);
+            newImage.SetNativeSize();
         }
         foreach (AdventureButton ab in page.buttonChoices)
         {
